@@ -43,6 +43,12 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
+doctype_js = {
+    # "Customer": "public/js/cus_erpnext/doctype/customer.js",
+    "Sales Order": "public/js/cus_erpnext/doctype/sales_order.js",
+    "Item Group": "public/js/cus_erpnext/doctype/item_group.js",
+    "Sales Invoice": "public/js/cus_erpnext/doctype/sales_invoice.js",
+}
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -133,6 +139,7 @@ app_license = "mit"
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
+
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -144,6 +151,16 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+    # "Customer": {
+    #     "before_insert": "uxl_erp.cus_erpnext.doctype.customer.validate_create",
+    #     "on_trash": "uxl_erp.cus_erpnext.doctype.customer.validate_delete"
+    # },
+    "Sales Order":{
+        "validate":"uxl_erp.cus_erpnext.doctype.sales_order.validate",
+        "validate":"uxl_erp.cus_erpnext.doctype.sales_invoice.validate"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -247,3 +264,23 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["module","=","Cus ERPNext"]
+        ]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [
+            ["module","=","Cus ERPNext"]
+        ]
+    },
+    {
+        "dt": "Item Group",
+        "filters": [
+            ["item_group_name","=","Trade Item"]
+        ]
+    }
+]
