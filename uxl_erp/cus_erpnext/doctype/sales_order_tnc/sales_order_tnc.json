@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "autoname": "sc_tc-.#####",
+ "creation": "2026-07-19 22:57:33.949514",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "terms_and_conditions",
+  "print_in_contract",
+  "print_position",
+  "bold",
+  "sc_no",
+  "underline"
+ ],
+ "fields": [
+  {
+   "fieldname": "terms_and_conditions",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Terms And Conditions"
+  },
+  {
+   "default": "1",
+   "fieldname": "print_in_contract",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Print in Contract"
+  },
+  {
+   "default": "Normal",
+   "fieldname": "print_position",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Print Position",
+   "options": "Normal\nTop Right\nBelow Item Table",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "bold",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Bold"
+  },
+  {
+   "fieldname": "sc_no",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "SC No"
+  },
+  {
+   "default": "0",
+   "fieldname": "underline",
+   "fieldtype": "Check",
+   "label": "Underline"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-22 00:36:35.281626",
+ "modified_by": "Administrator",
+ "module": "Cus ERPNext",
+ "name": "Sales Order TnC",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -46,6 +46,7 @@ app_license = "mit"
 doctype_js = {
     # "Customer": "public/js/cus_erpnext/doctype/customer.js",
     "Sales Order": "public/js/cus_erpnext/doctype/sales_order.js",
+    "Item": "public/js/cus_erpnext/doctype/item.js",
     "Item Group": "public/js/cus_erpnext/doctype/item_group.js",
     "Sales Invoice": "public/js/cus_erpnext/doctype/sales_invoice.js",
 }
@@ -158,7 +159,7 @@ doc_events = {
     # },
     "Sales Order":{
         "validate":"uxl_erp.cus_erpnext.doctype.sales_order.validate",
-        "validate":"uxl_erp.cus_erpnext.doctype.sales_invoice.validate"
+        "set_value":"uxl_erp.cus_erpnext.doctype.sales_order.set_value",
     }
 }
 
@@ -263,6 +264,10 @@ doc_events = {
 # ------------
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
+
+before_migrate = "uxl_erp.setup.custom_field_added.apply"
+
+after_migrate = "uxl_erp.setup.form_customization.apply"
 
 fixtures = [
     {
