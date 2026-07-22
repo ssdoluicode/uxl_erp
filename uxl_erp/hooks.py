@@ -90,7 +90,7 @@ doctype_js = {
 # ------------
 
 # before_install = "uxl_erp.install.before_install"
-# after_install = "uxl_erp.install.after_install"
+after_install = "uxl_erp.install.after_install"
 
 # Uninstallation
 # ------------
@@ -280,12 +280,6 @@ fixtures = [
         "dt": "Property Setter",
         "filters": [
             ["module","=","Cus ERPNext"]
-        ]
-    },
-    {
-        "dt": "Item Group",
-        "filters": [
-            ["item_group_name","=","Trade Item"]
         ]
     }
 ]
